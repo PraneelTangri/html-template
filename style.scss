@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    // font-family: 'Poppins', sans-serif;
+    // font-family: 'Roboto', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    .top {
+        height: 50px;
+        background-color: navy;
+        box-sizing: border-box;
+        padding: 0px 5%;
+        h5 {
+            float: left;
+            color: #FFF;
+            font-family: 'Poppins', sans-serif;
+            line-height: 50px;
+        }
+        .icons {
+            float: right;
+            i {
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                font-size: 22px;
+                line-height: 40px;
+                margin: 5px 15px;
+                border-radius: 50%;
+                color: #FFF;
+                &:hover {
+                    background-color: rgb(255, 187, 0);
+                }
+            }
+        }
+    }
+    nav {
+        height: 80px;
+        // background-color: crimson;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        z-index: 9;
+        width: 100vw;
+        ul {
+            width: 50%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: 5%;
+            display: flex;
+            justify-content: space-around;
+            li {
+                line-height: 80px;
+                list-style: none;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    top: 60px;
+                    left: -20%;
+                    background-color: crimson;
+                    height: 5px;
+                    width: 0%;
+                    transition: 0.2s width linear;
+                    content: "";
+                }
+                &:hover::after {
+                    width: 140%;
+                    transition: 0.2s width linear;
+                }
+                a {
+                    color: #FFF;
+                    text-decoration: none;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 16px;
+                    display: block;
+                    text-align: center;
+                }
+                a.active {
+                    color: crimson;
+                }
+            }
+        }
+    }
+    nav.expand {
+        position: fixed;
+        top: 0px;
+        background-color: navy;
+    }
+}
+
+.slider {
+    width: 100%;
+    height: calc(80vh - 50px);
+    overflow: hidden;
+    position: relative;
+    &::after {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: #0006;
+        z-index: 3;
+    }
+    .control-left {
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4;
+        font-size: 32px;
+        padding: 15px 20px;
+        background-color: #FFF2;
+        transition: background-color 0.2s;
+        border-radius: 50%;
+        color: #FFF;
+        cursor: pointer;
+        &:hover {
+            background-color: #FFF4;
+            transition: background-color 0.2s;
+        }
+    }
+    .control-right {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4;
+        font-size: 32px;
+        padding: 15px 20px;
+        background-color: #FFF2;
+        transition: background-color 0.2s;
+        border-radius: 50%;
+        color: #FFF;
+        cursor: pointer;
+        &:hover {
+            background-color: #FFF4;
+            transition: background-color 0.2s;
+        }
+    }
+    .sliding {
+        width: 400vw;
+        height: 100%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        animation: slide 16s infinite linear;
+        .slide {
+            width: 25%;
+            height: 100%;
+            float: left;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@keyframes slide {
+    0% {
+        left: 0vw;
+    }
+    20% {
+        left: 0vw;
+    }
+    25% {
+        left: -100vw;
+    }
+    45% {
+        left: -100vw;
+    }
+    50% {
+        left: -200vw;
+    }
+    70% {
+        left: -200vw;
+    }
+    75% {
+        left: -300vw;
+    }
+    95% {
+        left: -300vw;
+    }
+    100% {
+        left: 0vw;
+    }
+}
+
+.cards {
+    height: 60vh;
+    padding: 0px 10vw;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+    top: -9vh;
+    .card {
+        width: 26vw;
+        height: 100%;
+        float: left;
+        background-color: #FFF;
+        .card-top {
+            height: 15%;
+            background-color: crimson;
+            i {
+                font-size: 32px;
+                color: #FFF;
+                line-height: 9vh;
+                float: left;
+                margin: 0px 20px;
+            }
+            h2 {
+                float: left;
+                font-family: 'Poppins', sans-serif;
+                color: #FFF;
+                line-height: 9vh;
+            }
+        }
+        img {
+            display: block;
+            height: 40%;
+            width: 100%;
+        }
+        .text {
+            height: 45%;
+            text-align: center;
+            p {
+                color: #555;
+                font-family: 'Roboto', sans-serif;
+                width: 90%;
+                margin: 20px auto;
+                text-align: center;
+            }
+        }
+    }
+}
